@@ -1,168 +1,200 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>meozigoon 포트폴리오</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>이동하 이력 페이지</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0a192f;
-            color: #ffffff;
-            line-height: 1.6;
-        }
+            body {
+                font-family: "Inter", sans-serif;
+                background-color: #001f3f; /* 남색 배경 */
+                color: #ffffff;
+                line-height: 1.6;
+            }
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
 
-        header {
-            background-color: #000000;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header h1 {
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-
-        nav a {
-            margin-left: 1.5rem;
-            font-weight: 500;
-        }
-
-        section {
-            padding: 4rem 2rem;
-            max-width: 1000px;
-            margin: auto;
-        }
-
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #1f2937;
-            padding-bottom: 0.5rem;
-        }
-
-        .section-content {
-            margin-top: 1rem;
-        }
-
-        .skills, .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-        }
-
-        .card {
-            background-color: #1a1a1a;
-            padding: 1.5rem;
-            border-radius: 10px;
-            transition: background 0.3s;
-        }
-
-        .card:hover {
-            background-color: #2b2b2b;
-        }
-
-        footer {
-            background-color: #000000;
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
-            color: #aaa;
-        }
-
-        @media (max-width: 600px) {
             header {
-                flex-direction: column;
-                align-items: flex-start;
+                background-color: #000000;
+                padding: 2rem 1rem;
+                text-align: center;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+                font-weight: 700;
+                color: #ffffff;
             }
 
             nav {
-                margin-top: 1rem;
+                background-color: #0f172a;
+                display: flex;
+                justify-content: center;
+                gap: 2rem;
+                padding: 1rem 0;
+                font-weight: 600;
             }
 
             nav a {
-                margin: 0 1rem 0 0;
+                color: #ffffff;
+                transition: color 0.3s;
             }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>이동하</h1>
+
+            nav a:hover {
+                color: #38bdf8;
+            }
+
+            section {
+                padding: 3rem 2rem;
+                max-width: 1000px;
+                margin: auto;
+            }
+
+            h2 {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+                text-align: center;
+            }
+
+            .card-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 2rem;
+            }
+
+            .card {
+                background-color: #1a1a1a;
+                padding: 1.5rem;
+                border-radius: 12px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+                transition: background-color 0.3s;
+            }
+
+            .card:hover {
+                background-color: #2a2a2a;
+            }
+
+            .card h3 {
+                margin-bottom: 0.5rem;
+                font-size: 1.2rem;
+                color: #38bdf8;
+            }
+
+            .card p {
+                font-size: 0.95rem;
+                color: #d1d5db;
+            }
+
+            footer {
+                background-color: #000000;
+                text-align: center;
+                padding: 2rem;
+                font-size: 0.9rem;
+                color: #aaa;
+            }
+
+            @media (max-width: 600px) {
+                nav {
+                    flex-direction: column;
+                    gap: 1rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>이동하</h1>
+        </header>
+
         <nav>
             <a href="#about">소개</a>
             <a href="#experience">이력</a>
-            <a href="#skills">기술</a>
             <a href="#projects">프로젝트</a>
             <a href="#contact">연락처</a>
         </nav>
-    </header>
 
-    <section id="about">
-        <h2>소개</h2>
-        <div class="section-content">
-            <p>과학고등학교 재학 중이며, 정보 과학과 공학, 생명과학, 화학 융합에 관심을 가지고 다양한 연구와 프로젝트를 진행하고 있습니다. 현재는 ESP32 기반 IoT 및 Firebase 기반 인증 시스템 등 실용적인 소프트웨어 개발에도 주력하고 있습니다.</p>
-        </div>
-    </section>
-
-    <section id="experience">
-        <h2>이력</h2>
-        <div class="section-content">
-            <p><strong>2024 ~ 현재</strong> – 과학고등학교 정보과학 분야 심화 학습</p>
-            <p><strong>2024</strong> – Firebase 기반 웹 인증 시스템 개발</p>
-            <p><strong>2023</strong> – 전국 과학 전람회 생명과학 부문 참가</p>
-        </div>
-    </section>
-
-    <section id="skills">
-        <h2>기술 스택</h2>
-        <div class="skills">
-            <div class="card">C++ / Python</div>
-            <div class="card">HTML / CSS / JavaScript</div>
-            <div class="card">Firebase / Firebase Auth</div>
-            <div class="card">ESP32 / Nextion UI</div>
-            <div class="card">Unreal Engine (게임 개발)</div>
-        </div>
-    </section>
-
-    <section id="projects">
-        <h2>프로젝트</h2>
-        <div class="projects">
-            <div class="card">
-                <h3>ESP32-C6 날씨 UI</h3>
-                <p>Nextion 디스플레이와 ESP32-C6를 활용한 실시간 날씨 표시 시스템. 한국 지역 날씨를 삼성 앱 스타일로 표현.</p>
+        <section id="about">
+            <h2>소개</h2>
+            <div class="card-container">
+                <div class="card">
+                    <p>
+                        한성과학고등학교 34기 재학 중이며, 정보과학, 생명과학,
+                        화학 융합에 관심을 가지고 다양한 연구와 프로젝트를
+                        수행하고 있습니다.
+                    </p>
+                </div>
             </div>
-            <div class="card">
-                <h3>Firebase 인증 시스템</h3>
-                <p>Firebase Authentication을 기반으로 한 웹 로그인 및 보호 페이지 시스템 구현.</p>
+        </section>
+
+        <section id="experience">
+            <h2>이력</h2>
+            <div class="card-container">
+                <div class="card">
+                    <h3>과학고 정보과학 심화학습</h3>
+                    <p>2024 ~ 현재 | 알고리즘, IoT, 인증 시스템 개발</p>
+                </div>
+                <div class="card">
+                    <h3>Firebase 인증 시스템 개발</h3>
+                    <p>
+                        2024 | JavaScript + Firebase Authentication을 활용한
+                        실용적인 인증 웹 앱 개발
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>전국 과학 전람회 참가</h3>
+                    <p>2023 | 생명과학 기반 실험 및 논문 발표</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact">
-        <h2>연락처</h2>
-        <div class="section-content">
-            <p>이메일: your.email@example.com</p>
-            <p>GitHub: <a href="https://github.com/meozigoon" target="_blank">https://github.com/meozigoon</a></p>
-        </div>
-    </section>
+        <section id="projects">
+            <h2>프로젝트</h2>
+            <div class="card-container">
+                <div class="card">
+                    <h3>ESP32-C6 날씨 UI</h3>
+                    <p>
+                        ESP32-C6 + Nextion 디스플레이를 이용하여 삼성 날씨
+                        스타일의 날씨 정보를 실시간으로 표시
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>Firebase 웹 인증 시스템</h3>
+                    <p>
+                        Firebase 기반의 회원가입, 로그인, 보호된 페이지 접근
+                        제어 기능을 포함한 웹 인증 시스템
+                    </p>
+                </div>
+            </div>
+        </section>
 
-    <footer>
-        &copy; 2025 이동하. All rights reserved.
-    </footer>
-</body>
+        <section id="contact">
+            <h2>연락처</h2>
+            <div class="card-container">
+                <div class="card">
+                    <p><strong>이메일:</strong> meozigoon@gmail.com</p>
+                    <p>
+                        <strong>GitHub:</strong>
+                        <a href="https://github.com/meozigoon" target="_blank"
+                            >https://github.com/meozigoon</a
+                        >
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <footer>&copy; 2025 이동하. All rights reserved.</footer>
+    </body>
 </html>
