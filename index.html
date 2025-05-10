@@ -112,6 +112,61 @@
                     gap: 1rem;
                 }
             }
+
+            .timeline {
+                position: relative;
+                margin: 3rem auto;
+                padding-left: 40px;
+                max-width: 700px;
+            }
+            .timeline::before {
+                content: "";
+                position: absolute;
+                left: 18px;
+                top: 0;
+                width: 4px;
+                height: 100%;
+                background: #38bdf8;
+                border-radius: 2px;
+            }
+            .timeline-event {
+                position: relative;
+                margin-bottom: 2.5rem;
+            }
+            .timeline-dot {
+                position: absolute;
+                left: -2px;
+                top: 0.2rem;
+                width: 24px;
+                height: 24px;
+                background: #001f3f;
+                border: 4px solid #38bdf8;
+                border-radius: 50%;
+                z-index: 1;
+                box-sizing: border-box;
+            }
+            .timeline-year {
+                font-weight: bold;
+                color: #38bdf8;
+                font-size: 1.1rem;
+                margin-bottom: 0.2rem;
+                margin-left: 2.5rem;
+            }
+            .timeline-content {
+                background: #1a1a1a;
+                border-radius: 10px;
+                padding: 1rem 1.5rem;
+                margin-left: 2.5rem;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            }
+            @media (max-width: 600px) {
+                .timeline {
+                    padding-left: 20px;
+                }
+                .timeline-content {
+                    padding: 0.8rem 1rem;
+                }
+            }
         </style>
     </head>
     <body>
@@ -141,21 +196,31 @@
 
         <section id="experience">
             <h2>이력</h2>
-            <div class="card-container">
-                <div class="card">
-                    <h3>과학고 정보과학 심화학습</h3>
-                    <p>2024 ~ 현재 | 알고리즘, IoT, 인증 시스템 개발</p>
+            <div class="timeline">
+                <div class="timeline-event">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">2024 ~ 현재</div>
+                    <div class="timeline-content">
+                        <strong>과학고 정보과학 심화학습</strong><br />
+                        알고리즘, IoT, 인증 시스템 개발
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>Firebase 인증 시스템 개발</h3>
-                    <p>
-                        2024 | JavaScript + Firebase Authentication을 활용한
-                        실용적인 인증 웹 앱 개발
-                    </p>
+                <div class="timeline-event">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">2024</div>
+                    <div class="timeline-content">
+                        <strong>Firebase 인증 시스템 개발</strong><br />
+                        JavaScript + Firebase Authentication을 활용한 실용적인
+                        인증 웹 앱 개발
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>전국 과학 전람회 참가</h3>
-                    <p>2023 | 생명과학 기반 실험 및 논문 발표</p>
+                <div class="timeline-event">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">2023</div>
+                    <div class="timeline-content">
+                        <strong>전국 과학 전람회 참가</strong><br />
+                        생명과학 기반 실험 및 논문 발표
+                    </div>
                 </div>
             </div>
         </section>
