@@ -17,7 +17,7 @@
 
             body {
                 font-family: "Inter", sans-serif;
-                background-color: #001f3f; /* 남색 배경 */
+                background-color: #001f3f;
                 color: #ffffff;
                 line-height: 1.6;
             }
@@ -119,6 +119,7 @@
                 padding-left: 40px;
                 max-width: 700px;
             }
+
             .timeline::before {
                 content: "";
                 position: absolute;
@@ -129,10 +130,12 @@
                 background: #38bdf8;
                 border-radius: 2px;
             }
+
             .timeline-event {
                 position: relative;
                 margin-bottom: 2.5rem;
             }
+
             .timeline-dot {
                 position: absolute;
                 left: -2px;
@@ -145,6 +148,7 @@
                 z-index: 1;
                 box-sizing: border-box;
             }
+
             .timeline-year {
                 font-weight: bold;
                 color: #38bdf8;
@@ -152,17 +156,24 @@
                 margin-bottom: 0.2rem;
                 margin-left: 2.5rem;
             }
+
             .timeline-content {
                 background: #1a1a1a;
                 border-radius: 10px;
                 padding: 1rem 1.5rem;
                 margin-left: 2.5rem;
                 box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+                margin-top: 0.7rem;
             }
+            .timeline-content:first-of-type {
+                margin-top: 0;
+            }
+
             @media (max-width: 600px) {
                 .timeline {
                     padding-left: 20px;
                 }
+
                 .timeline-content {
                     padding: 0.8rem 1rem;
                 }
@@ -213,27 +224,41 @@
             <div class="timeline">
                 <div class="timeline-event">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-year">2024 ~ 현재</div>
+                    <div class="timeline-year">2025 ~ 현재</div>
                     <div class="timeline-content">
-                        <strong>과학고 정보과학 심화학습</strong><br />
-                        알고리즘, IoT, 인증 시스템 개발
+                        <strong>ESP32 칩을 이용한 개발</strong><br />
+                        IoT, 원격제어 개발
+                    </div>
+                    <div class="timeline-content">
+                        <strong>PCB 제작 및 제품 개발</strong><br />
+                        PCB 설계 및 제작, 제품 개발<br />
+                    </div>
+                    <div class="timeline-content">
+                        <strong>C#을 이용한 AI, 윈도우 프로그램 개발</strong><br />
+                        C# Windows Form, ML.NET 등 이용한 개발
                     </div>
                 </div>
                 <div class="timeline-event">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-year">2024</div>
+                    <div class="timeline-year">2025</div>
                     <div class="timeline-content">
-                        <strong>Firebase 인증 시스템 개발</strong><br />
-                        JavaScript + Firebase Authentication을 활용한 실용적인
-                        인증 웹 앱 개발
+                        <strong>Team Toyo</strong><br />
+                        34회 졸업, 전교 1등
+                    </div>
+                    <div class="timeline-content">
+                        <strong>웹 페이지 개발</strong><br />
+                        JavaScript와 Firebase Authentication을 활용한 인증 웹 앱 개발<br />
+                        <a href="https://www.toyotech.dev/" target="_blank"
+                            >toyotech.dev</a
+                        >
                     </div>
                 </div>
                 <div class="timeline-event">
                     <div class="timeline-dot"></div>
                     <div class="timeline-year">2023</div>
                     <div class="timeline-content">
-                        <strong>전국 과학 전람회 참가</strong><br />
-                        생명과학 기반 실험 및 논문 발표
+                        <strong>단대소고 주니어 프로그래밍 경진대회 은상 수상</strong><br />
+                        2023년 제 1회 단국대학교부속소프트웨어고등학교 주니어 프로그래밍 경진대회
                     </div>
                 </div>
                 <div class="timeline-event">
@@ -248,6 +273,13 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-year">2022</div>
                     <div class="timeline-content">
+                        <strong>삼성 주니어 SW 창작대회 본선 진출</strong><br />
+                        장애인을 이해하기 위해 장애를 체험하는 게임 기획
+                    </div>
+                <div class="timeline-event">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">2022</div>
+                    <div class="timeline-content">
                         <strong>서울성서초등학교 졸업</strong><br />
                         38회 졸업
                     </div>
@@ -256,7 +288,10 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-year">2021</div>
                     <div class="timeline-content">
-                        <strong>우수과학어린이 과학기술정보통신부 장관상 수상</strong><br />
+                        <strong
+                            >우수과학어린이 과학기술정보통신부 장관상
+                            수상</strong
+                        ><br />
                         2021년 4월 21일, 제 54회 과학의 날 기념
                     </div>
                 </div>
@@ -268,9 +303,7 @@
             <div class="card-container">
                 <div class="card">
                     <h3>Galactic Manhunt</h3>
-                    <p>
-                        C#을 이용한 게임 제작
-                    </p>
+                    <p>C#을 이용한 게임 제작</p>
                 </div>
                 <div class="card">
                     <h3>Firebase 웹 인증 시스템</h3>
