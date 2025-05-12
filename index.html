@@ -69,6 +69,22 @@
                 text-align: center;
             }
 
+            h2.section-title {
+                position: relative;
+                margin-bottom: 2.5rem;
+            }
+            
+            h2.section-title::after {
+                content: "";
+                display: block;
+                margin: 1.2rem auto 0 auto;
+                width: 98%;
+                max-width: 1200px;
+                height: 2px;
+                background: #38bdf8;
+                opacity: 0.5;
+            }
+
             .card-container {
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -121,14 +137,7 @@
             }
 
             .timeline::before {
-                content: "";
-                position: absolute;
-                left: 18px;
-                top: 0;
-                width: 4px;
-                height: 100%;
-                background: #38bdf8;
-                border-radius: 2px;
+                display: none;
             }
 
             .timeline-event {
@@ -138,7 +147,7 @@
 
             .timeline-dot {
                 position: absolute;
-                left: -2px;
+                left: -6px;
                 top: 0.2rem;
                 width: 24px;
                 height: 24px;
@@ -154,7 +163,7 @@
                 color: #38bdf8;
                 font-size: 1.1rem;
                 margin-bottom: 0.2rem;
-                margin-left: 2.5rem;
+                margin-left: 38px;
             }
 
             .timeline-content {
@@ -178,6 +187,22 @@
                     padding: 0.8rem 1rem;
                 }
             }
+
+            .timeline-wrapper-outer {
+                position: relative;
+            }
+
+            .timeline-vertical-bar {
+                position: absolute;
+                left: 120px;
+                top: 0;
+                width: 4px;
+                height: 100%;
+                background: #38bdf8;
+                border-radius: 2px;
+                z-index: 0;
+                opacity: 0.5;
+            }
         </style>
     </head>
     <body>
@@ -193,7 +218,7 @@
         </nav>
 
         <section id="about">
-            <h2>소개</h2>
+            <h2 class="section-title">소개</h2>
             <div class="card-container">
                 <div class="card">
                     <p>
@@ -220,89 +245,140 @@
         </section>
 
         <section id="experience">
-            <h2>이력</h2>
-            <div class="timeline">
-                <div class="timeline-event">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-year">2025 ~ 현재</div>
-                    <div class="timeline-content">
-                        <strong>ESP32 칩을 이용한 개발</strong><br />
-                        IoT, 원격제어 개발
-                    </div>
-                    <div class="timeline-content">
-                        <strong>PCB 제작 및 제품 개발</strong><br />
-                        PCB 설계 및 제작, 제품 개발<br />
-                    </div>
-                    <div class="timeline-content">
-                        <strong>C#을 이용한 AI, 윈도우 프로그램 개발</strong><br />
-                        C# Windows Form, ML.NET 등 이용한 개발
-                    </div>
-                </div>
-                <div class="timeline-event">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-year">2025</div>
-                    <div class="timeline-content">
-                        <strong>Team Toyo</strong><br />
-                        34회 졸업, 전교 1등
-                    </div>
-                    <div class="timeline-content">
-                        <strong>웹 페이지 개발</strong><br />
-                        JavaScript와 Firebase Authentication을 활용한 인증 웹 앱 개발<br />
-                        <a href="https://www.toyotech.dev/" target="_blank"
-                            >toyotech.dev</a
-                        >
-                    </div>
-                </div>
-                <div class="timeline-event">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-year">2023</div>
-                    <div class="timeline-content">
-                        <strong>단대소고 주니어 프로그래밍 경진대회 은상 수상</strong><br />
-                        2023년 제 1회 단국대학교부속소프트웨어고등학교 주니어 프로그래밍 경진대회
-                    </div>
-                </div>
-                <div class="timeline-event">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-year">2025</div>
-                    <div class="timeline-content">
-                        <strong>성서중학교 졸업</strong><br />
-                        39회 졸업, 전교 1등
-                    </div>
-                </div>
-                <div class="timeline-event">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-year">2022</div>
-                    <div class="timeline-content">
-                        <strong>삼성 주니어 SW 창작대회 본선 진출</strong><br />
-                        장애인을 이해하기 위해 장애를 체험하는 게임 기획
-                    </div>
-                <div class="timeline-event">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-year">2022</div>
-                    <div class="timeline-content">
-                        <strong>서울성서초등학교 졸업</strong><br />
-                        38회 졸업
+            <div style="position: relative; margin-bottom: 2rem">
+                <h2
+                    class="section-title"
+                    style="margin: 0; text-align: center; width: 100%"
+                >
+                    이력
+                </h2>
+                <button
+                    id="toggle-experience"
+                    style="
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        padding: 0.3em 1em;
+                        font-size: 1rem;
+                        border-radius: 6px;
+                        border: none;
+                        background: #38bdf8;
+                        color: #001f3f;
+                        cursor: pointer;
+                    "
+                >
+                    펼치기
+                </button>
+            </div>
+            <div class="timeline-wrapper-outer" style="position: relative">
+                <div class="timeline-vertical-bar"></div>
+                <div id="timeline-wrapper" style="display: block">
+                    <div class="timeline timeline-main">
+                        <div class="timeline-event">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-year">2025 ~ 현재</div>
+                            <div class="timeline-content">
+                                <strong>Team ToyoTech</strong><br />
+                                Team ToyoTech의 일원으로 활동 중
+                            </div>
+                            <div class="timeline-content">
+                                <strong>ESP32 칩을 이용한 개발</strong><br />
+                                IoT, 원격제어 개발
+                            </div>
+                            <div class="timeline-content">
+                                <strong>PCB 제작 및 제품 개발</strong><br />
+                                PCB 설계 및 제작, 제품 개발<br />
+                            </div>
+                            <div class="timeline-content">
+                                <strong
+                                    >C#을 이용한 AI, 윈도우 프로그램
+                                    개발</strong
+                                ><br />
+                                C# Windows Form, ML.NET 등 이용한 개발
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline-event">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-year">2021</div>
-                    <div class="timeline-content">
-                        <strong
-                            >우수과학어린이 과학기술정보통신부 장관상
-                            수상</strong
-                        ><br />
-                        2021년 4월 21일, 제 54회 과학의 날 기념
+                <div id="timeline-toggle-wrapper" style="display: none">
+                    <div class="timeline timeline-main">
+                        <div class="timeline-event">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-year">2025</div>
+                            <div class="timeline-content">
+                                <strong>Team Toyo</strong><br />
+                                34회 졸업, 전교 1등
+                            </div>
+                            <div class="timeline-content">
+                                <strong>웹 페이지 개발</strong><br />
+                                JavaScript와 Firebase Authentication을 활용한
+                                인증 웹 앱 개발<br />
+                                <a
+                                    href="https://www.toyotech.dev/"
+                                    target="_blank"
+                                    >toyotech.dev</a
+                                >
+                            </div>
+                        </div>
+                        <div class="timeline-event">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-year">2023</div>
+                            <div class="timeline-content">
+                                <strong
+                                    >단대소고 주니어 프로그래밍 경진대회 은상
+                                    수상</strong
+                                ><br />
+                                2023년 제 1회 단국대학교부속소프트웨어고등학교
+                                주니어 프로그래밍 경진대회
+                            </div>
+                        </div>
+                        <div class="timeline-event">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-year">2025</div>
+                            <div class="timeline-content">
+                                <strong>성서중학교 졸업</strong><br />
+                                39회 졸업, 전교 1등
+                            </div>
+                        </div>
+                        <div class="timeline-event">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-year">2022</div>
+                            <div class="timeline-content">
+                                <strong
+                                    >삼성 주니어 SW 창작대회 본선 진출</strong
+                                ><br />
+                                장애인을 이해하기 위해 장애를 체험하는 게임 기획
+                            </div>
+                        </div>
+                        <div class="timeline-event">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-year">2022</div>
+                            <div class="timeline-content">
+                                <strong>서울성서초등학교 졸업</strong><br />
+                                38회 졸업
+                            </div>
+                        </div>
+                        <div class="timeline-event">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-year">2021</div>
+                            <div class="timeline-content">
+                                <strong
+                                    >우수과학어린이 과학기술정보통신부 장관상
+                                    수상</strong
+                                ><br />
+                                2021년 4월 21일, 제 54회 과학의 날 기념
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="projects">
-            <h2>프로젝트</h2>
+            <h2 class="section-title">프로젝트</h2>
             <div class="card-container">
                 <div class="card">
-                    <h3>Galactic Manhunt</h3>
+                    <h3>"Galactic Manhunt</h3>
                     <p>C#을 이용한 게임 제작</p>
                 </div>
                 <div class="card">
@@ -316,7 +392,7 @@
         </section>
 
         <section id="contact">
-            <h2>연락처</h2>
+            <h2 class="section-title">연락처</h2>
             <div class="card-container">
                 <div class="card">
                     <p>
@@ -331,17 +407,47 @@
                             >dhlee@toyotech.dev</a
                         >
                     </p>
-                    <br />
+                </div>
+                <div class="card">
                     <p>
                         <strong>GitHub:</strong>
                         <a href="https://github.com/meozigoon" target="_blank"
                             >meozigoon</a
                         >
                     </p>
+                    <p>
+                        <strong>
+                            <a
+                                href="https://www.acmicpc.net/user/meozigoon"
+                                target="_blank"
+                                >BOJ</a
+                            >
+                        </strong>
+                        /
+                        <strong>
+                            <a
+                                href="https://solved.ac/profile/meozigoon"
+                                target="_blank"
+                                >solved.ac</a
+                            >
+                        </strong>
+                    </p>
                 </div>
             </div>
         </section>
 
         <footer>&copy; 2025 이동하. All rights reserved.</footer>
+        <script>
+            const btn = document.getElementById("toggle-experience");
+            const timelineToggleWrapper = document.getElementById(
+                "timeline-toggle-wrapper"
+            );
+            let opened = false;
+            btn.addEventListener("click", () => {
+                opened = !opened;
+                timelineToggleWrapper.style.display = opened ? "block" : "none";
+                btn.textContent = opened ? "접기" : "펼치기";
+            });
+        </script>
     </body>
 </html>
