@@ -85,11 +85,12 @@
                 padding: 1.5rem;
                 border-radius: 12px;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-                transition: background-color 0.3s;
+                transition: background-color 0.3s, transform 0.2s;
             }
 
             .card:hover {
                 background-color: #2a2a2a;
+                transform: scale(1.04);
             }
 
             .card h3 {
