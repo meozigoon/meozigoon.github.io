@@ -1,339 +1,222 @@
 <!DOCTYPE html>
-<html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>이동하 Dongha Lee</title>
-        <link rel="icon" type="image/png" href="/image/icon.png" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="style.css" />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        />
-    </head>
-    <body>
-        <header>
-            <h1>이동하</h1>
-        </header>
+<html lang="ko" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#001f4d" />
+  <title>meozigoon</title>
+  <link rel="icon" href="image/icon.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {a,
+        extend: {
+          colors: {
+            accent: '#001f4d',
+            glass: 'rgba(255,255,255,0.08)'
+          },
+          boxShadow: {
+            glass: '0 8px 30px rgba(0,0,0,0.3)'
+          },
+          backdropBlur: {
+            xl: '20px'
+          }
+        }
+      },
+      darkMode: 'class'
+    }
+  </script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+  <!-- Background accents -->
+  <div aria-hidden="true" class="fixed inset-0 -z-10">
+    <div class="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-accent/20 blur-3xl"></div>
+    <div class="absolute top-48 -right-20 h-80 w-80 rounded-full bg-blue-700/20 blur-3xl"></div>
+  </div>
 
-        <nav>
-            <a href="#about">소개</a>
-            <a href="#experience">이력</a>
-            <a href="#projects">프로젝트</a>
-            <a href="#contact">연락처</a>
-        </nav>
+  <header class="sticky top-0 z-50 backdrop-blur-xl/30 bg-slate-950/60 border-b border-white/10">
+    <div class="mx-auto max-w-6xl px-4 h-16 flex items-center justify-between">
+      <a href="#top" class="font-semibold tracking-tight text-slate-100">meozigoon</a>
+      <nav class="hidden md:flex gap-6 text-sm text-slate-300">
+        <a href="#about" class="hover:text-white">소개</a>
+        <a href="#affiliations" class="hover:text-white">소속</a>
+        <a href="#projects" class="hover:text-white">프로젝트</a>
+        <a href="#timeline" class="hover:text-white">연도별 이력</a>
+        <a href="#contact" class="hover:text-white">연락처</a>
+      </nav>
+      <a href="https://github.com/meozigoon" target="_blank" rel="noopener" class="text-xs md:text-sm px-3 py-1.5 rounded-full bg-accent/80 hover:bg-accent transition-colors">GitHub</a>
+    </div>
+  </header>
+  </nav>
 
-        <section id="about">
-            <h2 class="section-title">소개</h2>
-            <div class="card-container">
-                <div class="card">
-                    <p>
-                        <strong>한성과학고등학교 34기</strong> 재학 중이며,
-                        <strong>화학, 생명과학, 정보 분야</strong>에 관심을
-                        가지고 다양한 연구와
-                        <a href="https://github.com/meozigoon" target="_blank"
-                            >프로젝트</a
-                        >를 수행하고 있습니다.
-                    </p>
-                    <br />
-                    <p>
-                        <a href="https://www.toyotech.dev/" target="_blank"
-                            >Team ToyoTech</a
-                        >의 일원으로 활동하며 다양한
-                        <a
-                            href="https://github.com/Team-ToyoTech"
-                            target="_blank"
-                            >프로젝트</a
-                        >에 참여하고 있습니다.
-                    </p>
-                </div>
-            </div>
-        </section>
+  <main id="top" class="mx-auto max-w-6xl px-4 py-10 md:py-14 space-y-10">
+    <!-- Hero -->
+    <section class="glass rounded-3xl p-8 md:p-12">
+      <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
+        <img src="image/icon.png" alt="img" class="w-24 h-24 md:w-28 md:h-28 rounded-2xl ring-1 ring-white/10 shadow-glass object-cover" />
+        <div class="flex-1">
+          <h1 class="text-3xl md:text-4xl font-bold tracking-tight">이동하 <span class="text-slate-300 text-xl md:text-2xl align-middle">(DH.L / meozigoon)</span></h1>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full bg-white/10 text-xs">C++</span>
+            <span class="px-3 py-1 rounded-full bg-white/10 text-xs">C#</span>
+            <span class="px-3 py-1 rounded-full bg-white/10 text-xs">Python</span>
+            <span class="px-3 py-1 rounded-full bg-white/10 text-xs">Web</span>
+            <span class="px-3 py-1 rounded-full bg-white/10 text-xs">ESP32</span>
+            <span class="px-3 py-1 rounded-full bg-white/10 text-xs">PCB</span>
+          </div>
+      </div>
+    </section>
 
-        <section id="experience">
-            <div style="position: relative; margin-bottom: 2rem">
-                <h2
-                    class="section-title"
-                    style="margin: 0; text-align: center; width: 100%"
-                >
-                    이력
-                </h2>
-                <button
-                    id="toggle-experience"
-                    style="
-                        position: absolute;
-                        right: 0;
-                        top: 50%;
-                        transform: translateY(-50%);
-                        padding: 0.3em 1em;
-                        font-size: 1rem;
-                        border-radius: 6px;
-                        border: none;
-                        background: #38bdf8;
-                        color: #001f3f;
-                        cursor: pointer;
-                    "
-                >
-                    펼치기
-                </button>
-            </div>
-            <div class="timeline-wrapper-outer" style="position: relative">
-                <div class="timeline-vertical-bar"></div>
-                <div id="timeline-wrapper" style="display: block">
-                    <div class="timeline timeline-main">
-                        <div class="timeline-event">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-year">2025 ~ 현재</div>
-                            <div class="timeline-content">
-                                <strong
-                                    >C#을 이용한 윈도우 프로그램, AI
-                                    개발</strong
-                                ><br />
-                                C# Windows Form, ML.NET 이용한 개발
-                            </div>
-                            <div class="timeline-content">
-                                <strong>Team ToyoTech</strong><br />
-                                Team ToyoTech의 일원으로 활동 중
-                            </div>
-                            <div class="timeline-content">
-                                <strong>ESP32 칩을 이용한 개발</strong><br />
-                                IoT, 원격제어 개발
-                            </div>
-                            <div class="timeline-content">
-                                <strong>PCB 제작 및 제품 개발</strong><br />
-                                PCB 설계 및 제작, 제품 개발<br />
-                            </div>
-                            <div class="timeline-content">
-                                <strong>웹 페이지 개발</strong><br />
-                                JavaScript와 Firebase Authentication을 활용한
-                                인증 웹 개발
-                            </div>
-                            <div class="timeline-content">
-                                <strong>solved.ac Platinum 3</strong><br />
-                                BOJ, solved.ac Platinum 3 달성
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="timeline-toggle-wrapper" style="display: none">
-                    <div class="timeline timeline-main">
-                        <div class="timeline-event">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-year">2023</div>
-                            <div class="timeline-content">
-                                <strong
-                                    >단대소고 주니어 프로그래밍 경진대회 은상
-                                    수상</strong
-                                ><br />
-                                2023년 제 1회 단국대학교부속소프트웨어고등학교
-                                주니어 프로그래밍 경진대회
-                            </div>
-                        </div>
-                        <div class="timeline-event">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-year">2025</div>
-                            <div class="timeline-content">
-                                <strong>성서중학교 졸업</strong><br />
-                                제 39회 졸업, 전교 1등
-                            </div>
-                        </div>
-                        <div class="timeline-event">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-year">2022</div>
-                            <div class="timeline-content">
-                                <strong
-                                    >삼성 주니어 SW 창작대회 본선 진출</strong
-                                ><br />
-                                장애인을 이해하기 위해 장애를 체험하는 게임 기획
-                            </div>
-                        </div>
-                        <div class="timeline-event">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-year">2022</div>
-                            <div class="timeline-content">
-                                <strong>Calculator</strong><br />
-                                C# .Net Winform 을 이용한 계산기
-                            </div>
-                            <div class="timeline-content">
-                                <strong>서울성서초등학교 졸업</strong><br />
-                                제 38회 졸업
-                            </div>
-                        </div>
-                        <div class="timeline-event">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-year">2021</div>
-                            <div class="timeline-content">
-                                <strong
-                                    >우수과학어린이 과학기술정보통신부 장관상
-                                    수상</strong
-                                ><br />
-                                2021년 4월 21일, 제 54회 과학의 날 기념
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- About -->
+    <section id="about" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="glass rounded-3xl p-6 md:col-span-2">
+        <h2 class="text-xl font-semibold">소개</h2>
+        <div class="divider my-4"></div>
+        <p class="leading-7 text-slate-300">과학고 학생으로서 화학 · 생명과학 지식을 바탕으로 정보과학(알고리즘, 시스템, 웹, 임베디드, AI)을 융합하는 활동을 하고 있습니다. C++ 문제해결, C# 윈도우 애플리케이션, ESP32 기반 IoT·원격제어, PCB 설계, Firebase 인증 기반 웹, ML.NET/파이썬 기반 머신러닝 등 다양한 분야에 도전하고 있습니다.</p>
+      </div>
+      <div class="glass rounded-3xl p-6">
+        <h3 class="text-lg font-semibold">관심사</h3>
+        <div class="divider my-4"></div>
+        <ul class="grid grid-cols-1 gap-2 text-slate-300 text-sm">
+          <li>프로그래밍 언어 이론</li>
+          <li>임베디드 시스템</li>
+          <li>AI/ML (ML.NET, Python)</li>
+          <li>웹 프론트엔드/백엔드</li>
+          <li>알고리즘 및 문제해결 (<a class="underline underline-offset-2 hover:text-white" href="https://www.acmicpc.net/user/meozigoon" target="_blank" rel="noopener">BOJ</a>, <a class="underline underline-offset-2 hover:text-white" href="https://solved.ac/profile/meozigoon" target="_blank" rel="noopener">solved.ac</a>)</li>
+          <li>전자회로 · PCB 설계</li>
+        </ul>
+      </div>
+    </section>
 
-        <section id="projects">
-            <h2 class="section-title">프로젝트</h2>
-            <div class="card-container">
-                <div
-                    class="project-card"
-                    onclick="window.open('https://skkoa.toyotech.dev','_blank')"
-                >
-                    <div class="project-card-inner">
-                        <div class="project-card-front">
-                            <div class="project-card-header">SKKOA; LTW</div>
-                        </div>
-                        <div class="project-card-back">
-                            <div class="project-card-header">SKKOA; LTW</div>
-                            <div class="project-card-body">
-                                문자 코딩 입문자를 위한 새로운 프로그래밍 언어
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="project-card"
-                    onclick="window.open('https://github.com/Team-ToyoTech/W.I.S.H.-Kiosk','_blank')"
-                >
-                    <div class="project-card-inner">
-                        <div class="project-card-front">
-                            <div class="project-card-header">WI:SH Kiosk</div>
-                        </div>
-                        <div class="project-card-back">
-                            <div class="project-card-header">WI:SH Kiosk</div>
-                            <div class="project-card-body">
-                                노인을 위한 새로운 형식의 키오스크 개발
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-card-inner">
-                        <div class="project-card-front">
-                            <div class="project-card-header">
-                                ToyoPay System
-                            </div>
-                        </div>
-                        <div class="project-card-back">
-                            <div class="project-card-header">
-                                ToyoPay System
-                            </div>
-                            <div class="project-card-body">
-                                ESP32, Nextion display, Node.js를 이용한 RFID
-                                결제 시스템
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- Affiliations -->
+    <section id="affiliations" class="glass rounded-3xl p-6">
+      <h2 class="text-xl font-semibold">소속</h2>
+      <div class="divider my-4"></div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <a href="https://hansungsh.sen.hs.kr/" target="_blank" rel="noopener" class="block rounded-2xl p-5 bg-white/5 hover:bg-white/10 transition-colors">
+          <div class="text-sm text-slate-400">School</div>
+          <div class="font-semibold">한성과학고등학교</div>
+          <div class="text-slate-400 text-sm mt-1">Hansung Science High School</div>
+        </a>
+        <a href="https://www.toyotech.dev" target="_blank" rel="noopener" class="block rounded-2xl p-5 bg-white/5 hover:bg-white/10 transition-colors">
+          <div class="text-sm text-slate-400">Organization</div>
+          <div class="font-semibold">Team ToyoTech</div>
+          <div class="text-slate-400 text-sm mt-1">Firmware · Frontend</div>
+        </a>
+        <a href="https://github.com/2025ESC" target="_blank" rel="noopener" class="block rounded-2xl p-5 bg-white/5 hover:bg-white/10 transition-colors">
+          <div class="text-sm text-slate-400">Club</div>
+          <div class="font-semibold">ESC</div>
+          <div class="text-slate-400 text-sm mt-1">한성과학고 정보과학 동아리</div>
+        </a>
+      </div>
+    </section>
 
-        <section id="contact">
-            <h2 class="section-title">연락처</h2>
-            <div class="card-container">
-                <div class="card">
-                    <p>
-                        <a
-                            href="mailto:meozigoon@gmail.com"
-                            title="이메일 보내기"
-                            style="
-                                font-size: 1.3em;
-                                color: #38bdf8;
-                                margin-right: 0.5em;
-                                vertical-align: middle;
-                            "
-                        >
-                            <i class="fa-solid fa-envelope"></i>
-                        </a>
-                        <a
-                            href="mailto:meozigoon@gmail.com"
-                            style="
-                                vertical-align: middle;
-                                color: #38bdf8;
-                                text-decoration: underline;
-                            "
-                            >meozigoon@gmail.com</a
-                        >
-                    </p>
-                    <p>
-                        <a
-                            href="mailto:dhlee@toyotech.dev"
-                            title="이메일 보내기"
-                            style="
-                                font-size: 1.3em;
-                                color: #38bdf8;
-                                margin-right: 0.5em;
-                                vertical-align: middle;
-                            "
-                        >
-                            <i class="fa-solid fa-envelope"></i>
-                        </a>
-                        <a
-                            href="mailto:dhlee@toyotech.dev"
-                            style="
-                                vertical-align: middle;
-                                color: #38bdf8;
-                                text-decoration: underline;
-                            "
-                            >dhlee@toyotech.dev</a
-                        >
-                    </p>
-                </div>
-                <div class="card">
-                    <p>
-                        <a
-                            href="https://github.com/meozigoon"
-                            target="_blank"
-                            title="GitHub"
-                            style="
-                                font-size: 1.3em;
-                                color: #38bdf8;
-                                margin-right: 0.5em;
-                            "
-                        >
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a
-                            href="https://github.com/meozigoon"
-                            target="_blank"
-                            style="
-                                vertical-align: middle;
-                                color: #38bdf8;
-                                text-decoration: underline;
-                            "
-                            >meozigoon</a
-                        >
-                    </p>
-                    <p>
-                        <strong>
-                            <a
-                                href="https://www.acmicpc.net/user/meozigoon"
-                                target="_blank"
-                                >BOJ</a
-                            >
-                        </strong>
-                        /
-                        <strong>
-                            <a
-                                href="https://solved.ac/profile/meozigoon"
-                                target="_blank"
-                                >solved.ac</a
-                            >
-                        </strong>
-                    </p>
-                </div>
-            </div>
-        </section>
+    <!-- Projects -->
+    <section id="projects" class="glass rounded-3xl p-6">
+      <h2 class="text-xl font-semibold">프로젝트</h2>
+      <div class="divider my-4"></div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <a href="https://www.toyotech.dev" target="_blank" rel="noopener" class="block p-5 rounded-2xl bg-white/5 hover:bg-white/10">
+          <div class="font-semibold">WI:SH Kiosk</div>
+          <p class="text-sm text-slate-400 mt-1">고령층을 위한 필기 인식 기반 키오스크 시스템</p>
+        </a>
+        <a href="https://github.com/Team-ToyoTech/skkoa-web" target="_blank" rel="noopener" class="block p-5 rounded-2xl bg-white/5 hover:bg-white/10">
+          <div class="font-semibold">SKKOA; LTW</div>
+          <p class="text-sm text-slate-400 mt-1">한국어 지향 초심자 친화형 프로그래밍 언어 및 웹 실행 환경</p>
+        </a>
+      </div>
+    </section>
 
-        <footer>&copy; 2025 이동하. All rights reserved.</footer>
+    <!-- Timeline -->
+    <section id="timeline" class="glass rounded-3xl p-6">
+      <div class="flex items-center justify-between gap-4">
+        <h2 class="text-xl font-semibold">연도별 이력</h2>
+        <button id="toggleYears" class="text-xs px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 transition">전체 연도 보기</button>
+      </div>
+      <div class="divider my-4"></div>
+      <div id="timelineList" class="space-y-6">
+        <!-- 2025 ~ 현재 -->
+        <div class="year-block" data-year="2025">
+          <div class="flex items-center gap-2">
+            <div class="w-2 h-2 rounded-full bg-accent"></div>
+            <h3 class="font-semibold">현재</h3>
+          </div>
+          <ul class="mt-2 list-disc list-inside text-slate-300 text-sm">
+            <li>한성과학고등학교 34기 재학</li>
+            <li>Team ToyoTech 활동</li>
+            <li>solved.ac Platinum 3</li>
+          </ul>
+        </div>
+        <div class="year-block hidden" data-year="2025-2">
+          <div class="flex items-center gap-2">
+            <div class="w-2 h-2 rounded-full bg-accent"></div>
+            <h3 class="font-semibold">2025</h3>
+          </div>
+          <ul class="mt-2 list-disc list-inside text-slate-300 text-sm">
+            <li>성서중학교 졸업(제39회) · 전교 1등</li>
+          </ul>
+        </div>
+        <!-- 2023 -->
+        <div class="year-block hidden" data-year="2023">
+          <div class="flex items-center gap-2">
+            <div class="w-2 h-2 rounded-full bg-accent"></div>
+            <h3 class="font-semibold">2023</h3>
+          </div>
+          <ul class="mt-2 list-disc list-inside text-slate-300 text-sm">
+            <li>단대소고 주니어 프로그래밍 경진대회 은상</li>
+          </ul>
+        </div>
+        <!-- 2022 -->
+        <div class="year-block hidden" data-year="2022">
+          <div class="flex items-center gap-2">
+            <div class="w-2 h-2 rounded-full bg-accent"></div>
+            <h3 class="font-semibold">2022</h3>
+          </div>
+          <ul class="mt-2 list-disc list-inside text-slate-300 text-sm">
+            <li>삼성 주니어 SW 창작대회 본선(장애 이해 체험 게임 기획)</li>
+            <li>서울성서초등학교 졸업(제38회)</li>
+          </ul>
+        </div>
+        <!-- 2021 -->
+        <div class="year-block hidden" data-year="2021">
+          <div class="flex items-center gap-2">
+            <div class="w-2 h-2 rounded-full bg-accent"></div>
+            <h3 class="font-semibold">2021</h3>
+          </div>
+          <ul class="mt-2 list-disc list-inside text-slate-300 text-sm">
+            <li>우수과학어린이 과학기술정보통신부 장관상</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-        <script src="script.js"></script>
-    </body>
+    <!-- Contact -->
+    <section id="contact" class="glass rounded-3xl p-6">
+      <h2 class="text-xl font-semibold">연락처</h2>
+      <div class="divider my-4"></div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+        <div class="rounded-2xl p-5 bg-white/5">
+          <div class="text-slate-400">Email</div>
+          <div class="font-semibold mt-1 space-y-1">
+            <div><a class="underline underline-offset-2 hover:text-white" href="mailto:meozigoon@gmail.com">meozigoon@gmail.com</a></div>
+            <div><a class="underline underline-offset-2 hover:text-white" href="mailto:dhlee@toyotech.dev">dhlee@toyotech.dev</a></div>
+          </div>
+        </div>
+        <div class="rounded-2xl p-5 bg-white/5">
+          <div class="text-slate-400">Instagram</div>
+          <div class="font-semibold mt-1">
+            <a id="igLink" class="underline underline-offset-2 hover:text-white" href="https://www.instagram.com/meozigoon/" target="_blank" rel="noopener">@meozigoon</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="pt-2 pb-8 text-center text-xs text-slate-400">
+      © <span id="yearNow"></span> meozigoon. All rights reserved.
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
 </html>
