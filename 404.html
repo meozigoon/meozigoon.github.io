@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="color-scheme" content="dark" />
+        <meta name="robots" content="noindex" />
+        <title>페이지를 찾을 수 없음 (404)</title>
+        <link rel="icon" href="/image/icon.png" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="/style.css" />
+        <style>
+            /* 404 페이지 전용 버튼 스타일 */
+            .btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                padding: 10px 14px;
+                border-radius: 10px;
+                text-decoration: none;
+                font-weight: 600;
+                transition: all 160ms ease;
+                color: #ffffff;
+                background: rgba(255, 255, 255, 0.03);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+            }
+            .btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+            }
+            .btn:focus {
+                outline: none;
+                box-shadow: 0 0 0 6px rgba(45, 108, 223, 0.12);
+            }
+            .btn-primary {
+                background: linear-gradient(180deg, #1e4fd6, #1546c9);
+                border: 1px solid rgba(20, 70, 201, 0.9);
+            }
+            .btn-ghost {
+                background: transparent;
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                color: #e6eefc;
+            }
+            .btn:active {
+                transform: translateY(1px);
+            }
+        </style>
+    </head>
+    <body class="bg-slate-950 text-slate-100">
+        <!-- Background accents -->
+        <div aria-hidden="true" class="fixed inset-0 -z-10">
+            <div
+                class="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-accent/20 blur-3xl"
+            ></div>
+            <div
+                class="absolute top-48 -right-20 h-80 w-80 rounded-full bg-blue-700/20 blur-3xl"
+            ></div>
+        </div>
+
+        <main class="mx-auto max-w-6xl px-4 py-12">
+            <section class="glass rounded-3xl p-8 md:p-12">
+                <div class="flex flex-col items-center text-center gap-6 py-8">
+                    <div
+                        class="text-[140px] font-extrabold leading-none text-slate-100"
+                    >
+                        404
+                    </div>
+                    <div class="content max-w-2xl">
+                        <h2 class="text-2xl md:text-3xl font-bold">
+                            페이지를 찾을 수 없습니다.
+                        </h2>
+                        <p class="lead">
+                            요청하신 페이지가 없거나 이동되었을 수 있습니다.
+                        </p>
+                        <p class="lead">
+                            아래 버튼을 눌러 홈으로 돌아갈 수 있습니다.
+                        </p>
+                        <p>ㅤ</p>
+
+                        <div class="actions justify-center">
+                            <a class="btn" href="/">홈으로 돌아가기</a>
+                        </div>
+                        <small class="text-slate-400 mt-4 block"
+                            >문의:
+                            <a
+                                class="underline"
+                                href="mailto:meozigoon@gmail.com"
+                                >meozigoon@gmail.com</a
+                            ></small
+                        >
+                    </div>
+                </div>
+            </section>
+            <footer class="pt-4 text-center text-xs text-slate-400">
+                © <span id="yearNow"></span> DH.L. All rights reserved.
+            </footer>
+        </main>
+
+        <script>
+            document.getElementById("yearNow").textContent =
+                new Date().getFullYear();
+        </script>
+    </body>
+</html>

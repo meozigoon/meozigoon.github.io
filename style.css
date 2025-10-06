@@ -39,3 +39,62 @@ body {
 :root {
     color-scheme: dark;
 }
+
+/* Buttons (used by 404 and other pages) */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 150ms ease;
+    color: inherit;
+    border: 1px solid transparent;
+    background: transparent;
+}
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(45, 108, 223, 0.12);
+}
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn-primary {
+    background: linear-gradient(180deg, #1e4fd6, #1546c9);
+    color: #fff;
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 20px rgba(13, 59, 153, 0.18);
+}
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(13, 59, 153, 0.22);
+}
+.btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-ghost {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: inherit;
+}
+.btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.02);
+    transform: translateY(-1px);
+}
+
+.btn-sm {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+    border-radius: 8px;
+}
+.btn-lg {
+    padding: 14px 18px;
+    font-size: 1rem;
+    border-radius: 12px;
+}
